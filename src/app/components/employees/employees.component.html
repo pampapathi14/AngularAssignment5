@@ -1,0 +1,28 @@
+
+<table class="table table-striped">
+    <thead>
+     <tr>
+       <th scope="col">EmpId</th>
+       <th scope="col">Email</th>  
+       <th scope="col">Name</th>  
+       <th scope="col">Edit</th>
+       <th scope="col">Delete</th>
+     </tr>
+    </thead>
+    <tbody *ngIf="employees">
+      <tr *ngFor="let employee of employees; index as i">
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.name }}</td>
+        
+        <td>
+          <i class="bi bi-pencil-square" style="color: green;" 
+             (click)="editModal(employee)"></i>
+        </td>
+        <td>
+          <i class="bi bi-trash" (click)="deleteEmployee(employee)" style="color: red;"></i>
+        </td>
+      </tr>
+     </tbody>
+  </table>
+  

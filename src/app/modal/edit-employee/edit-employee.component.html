@@ -1,0 +1,24 @@
+
+
+<div *ngIf="employee" class="container">
+    <h4 style="margin-top: 2rem;margin-bottom: 1rem;margin-left: 17rem;color: indianred;">Edit employee</h4>
+    <form #employeeForm="ngForm" (ngSubmit)="onUpdate()">
+      <div class="form-group">
+        <label>Employee Email</label>
+        <input class="form-control" name="email" #nameCtrl="ngModel" 
+          [(ngModel)]="employee.email" placeholder="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" name="name" #authorCtrl="ngModel" 
+          [(ngModel)]="employee.name" placeholder="name" required>
+      </div>
+
+      <div class="form-group float-right">
+       <button type="submit" class="btn btn-success" style="margin-top: 2rem;
+       margin-left: 17rem;" [disabled]="!employeeForm.valid">
+          <i class="bi bi-plus"></i>Update employee</button>
+       </div>
+    </form>
+  </div>
